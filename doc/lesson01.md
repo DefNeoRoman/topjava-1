@@ -90,7 +90,10 @@
 - <a href="http://tomcat.apache.org/">Tomcat Home Page</a>
 - <a href="http://java-course.ru/student/book1/servlet/">Сервлеты.</a>
 - Томкат менеджер: [http://localhost:8080/manager](http://localhost:8080/manager)
-  - в `TOMCAT_HOME\conf\tomcat-users.xml` нужно добавить `<user username="tomcat" password="tomcat" roles="tomcat,manager-gui,admin-gui"/>`
+  - в `TOMCAT_HOME\conf\tomcat-users.xml` нужно добавить 
+```
+<user username="tomcat" password="tomcat" roles="tomcat,manager-gui,admin-gui"/>
+```
 - Наше приложение: [http://localhost:8080/topjava](http://localhost:8080/topjava)
 - Наш сервлет:     [http://localhost:8080/topjava/users](http://localhost:8080/topjava/users)
 - Справочник:
