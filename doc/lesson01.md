@@ -97,6 +97,7 @@
 - Наше приложение: [http://localhost:8080/topjava](http://localhost:8080/topjava)
 - Наш сервлет:     [http://localhost:8080/topjava/users](http://localhost:8080/topjava/users)
 - Справочник:
+  - [HTTP](https://developer.mozilla.org/ru/docs/Web/HTTP)
   - <a href="http://info.javarush.ru/idea_help/2014/01/22/Руководство-пользователя-IntelliJ-IDEA-Отладчик-.html">Отладчик IntelliJ IDEA</a>
   - <a href="https://www.youtube.com/watch?v=tN8K1y-HSws&list=PLkKunJj_bZefB1_hhS68092rbF4HFtKjW&index=14">Yakov Fain: Intro to Java EE. Glassfish. Servlets (по русски)</a>
   - <a href="https://www.youtube.com/watch?v=Vumy_fbo-Qs&list=PLkKunJj_bZefB1_hhS68092rbF4HFtKjW&index=15">Yakov Fain: HTTP Sessions, Cookies, WAR deployments, JSP (по русски)</a>
@@ -105,7 +106,6 @@
   - <a href="http://www.java2ee.ru/jsp/">Java Server Page</a>
   - <a href="http://stackoverflow.com/questions/1890438/how-to-get-parameters-from-the-url-with-jsp#1890462">Java объекты, доступные в JSP</a>
   - <a href="http://java-online.ru/jsp.xhtml">Java Server Pages (JSP)</a>
-  - <a href="http://stackoverflow.com/questions/246859/http-1-0-vs-1-1">HTTP 1.0 vs 1.1</a>
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 6. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFaTdYUnpLNFFUeXM">Логирование.</a>
 #### Apply 1-6-logging.patch
@@ -191,7 +191,6 @@ JSF- sun-овский еще фреймворк, с которым я ни ра�
 - 2.2 Работать с реализацией CRUD через интерфейс, который не должен ничего знать о деталях реализации (Map, DB или что-то еще).
 - 2.3 Добавить поле `id` в `Meal/ MealWithExceed` и реализовать генерацию счетчика, УЧЕСТЬ МНОГОПОТОЧНОСТЬ СЕРВЕЛТОВ
     - [обзор java.util.concurrent](https://habrahabr.ru/company/luxoft/blog/157273/)
-    - [как работает ConcurrentHashMap](https://habrahabr.ru/post/132884/)
 - 2.4 Сделать форму редактирования в JSP: AJAX/JavaScript использовать НЕ надо, делаем через `<form method="post">` и `doPost()` в сервлете.
 - 2.5 Для ввода дат и времени можно использовать <a href="https://webref.ru/html/input/type">html5 типы</a>, хотя они поддерживаются не всеми браузерами (<a href="https://robertnyman.com/html5/forms/input-types.html">протестировать свой браузер</a>). В конце курса мы добавим <a href="http://xdsoft.net/jqplugins/datetimepicker/">DateTimePicker jQuery plugin</a>, который будет работать на всех браузерах.
 
