@@ -5,7 +5,7 @@
 ### ![correction](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Правки в проекте
 
 #### Apply 2_0_add_fix.patch
-- Добавил интересное решение HW1, которое можно сделать одним `retrun`: `MealsUtil.getFilteredWithExceededInOneReturn`
+- Добавил интересное решение HW1, которое можно сделать одним `return`: `MealsUtil.getFilteredWithExceededInOneReturn`
   -  Стримы не перемножаются, поэтому сложность по прежнему `O(N)`
   -  Время выполнения увеличивается, т.к. на каждый день создается 2 дополнительных стрима
 - Мелкие правки  
