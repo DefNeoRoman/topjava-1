@@ -114,7 +114,10 @@
 
 > - изменения в проекте: убрал `LoggerWrapper` и логирую напрямую в логгер SLF4J. При логгировании через вспомогательный класс, в логе теряется имя исходного класса.
 > - удалил зависимость `jul-to-slf4j`. Она нам не нужена и, согласно <a href="https://www.youtube.com/watch?v=qzqAUUgB3v8">видео Владимира Красильщика про логирование</a>, она замедляет работу  
- 
+> - Не делать конкатенацию строк при логгировании сообщений, если уровень логирования в конфигурации выставлен выше уровня логирования в коде
+>   - [slf4j formatting with {}](http://stackoverflow.com/a/10596390/548473)
+>   - [What is the fastest way of (not) logging](https://www.slf4j.org/faq.html#logging_performance)
+
 - <a href="http://habrahabr.ru/post/113145/">Java Logging: история кошмара</a>
 - <a href="http://skipy.ru/useful/logging.html">Ведение лога приложения</a>
 - <a href="http://logging.apache.org/log4j/2.x/index.html">Log4j</a>, <a href="http://logback.qos.ch/">Logback</a>
