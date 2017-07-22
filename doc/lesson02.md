@@ -50,6 +50,10 @@
 
 Начиная с Servlet API 2.3 пул сервлетов не создается, [создается только один инстанс сервлетов](https://stackoverflow.com/questions/6298309). Те. `InMemoryMealRepositoryImpl` в нашем случае создается тоже только один раз. Далее все наши классы слоев приложения будут создаваться через Spring, бины которого по умолчанию являются синглетонами (в его контексте).  
 
+> `MealServlet.getId(request)` может кинуть NPE (`NullPointerException`). Почему мы его не обрабатываем?
+
+`Objects.requireNonNull` - это проверка предсловия (будет на 4-м занятии). Означает что в метод пришел неверный аргумент (должен быть не null) и приложение сообщает об ошибке (что лучше, чем ее проглатывать или замазывать, иначе приложение может работать неправильно). Красиво обрабатывать ошибки будем на последних занятиях (Spring Exception Handling).
+
 ## Занятие 2:
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 3. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFVDJZVTktQzRYTWc">Библиотека vs Фреймворк. Стандартные библиотеки Apache Commons, Guava</a>
 - <a href="http://commons.apache.org/">Apache Commons</a>, <a href="https://github.com/google/guava/wiki">Guava</a>
