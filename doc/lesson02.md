@@ -13,7 +13,7 @@
 ## ![hw](https://cloud.githubusercontent.com/assets/13649199/13672719/09593080-e6e7-11e5-81d1-5cb629c438ca.png) Разбор домашнего задания HW1:
 
 **Перед сборкой проекта (или запуском Tomcat)**
-- **сделайте в вкладке Maven Projects `clean`**
+- **откройте вкладку Maven Projects и сделайте `clean`**
 - **если страничка в браузере работает неверно, очистите кэш (`Ctrl+F5` в хроме)**
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 1. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFXzByNVF3VV9zM1k">Отображения списка еды в JSP</a>
@@ -31,10 +31,10 @@
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 2. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFQndBeWFOa3phRTg">Optional: реализация CRUD</a>
 #### Apply 2_2_HW1_optional.patch
-Про repository будет подробно в видео "Слои приложения"
+Про использование паттерна Repository будет подробно рассказано в видео "Слои приложения"
 
 > - Переименовал `mealEdit.jsp` в `meal.jsp`
-> - В `meal.jsp` используется <a href="http://stackoverflow.com/questions/1890438/how-to-get-parameters-from-the-url-with-jsp#1890462">параметр запроса `param.action`</a>, он не кладется а аттрибуты.
+> - В `meal.jsp` используется <a href="http://stackoverflow.com/questions/1890438/how-to-get-parameters-from-the-url-with-jsp#1890462">параметр запроса `param.action`</a>, который не кладется а аттрибуты.
 > - В `MealServlet.doGet()` сделал выбор через `switch`
 
 Дополнительно:
@@ -48,11 +48,11 @@
 
 > Почему `InMemoryMealRepositoryImpl` не singleton?
 
-Начиная с Servlet API 2.3 пул сервлетов не создается, [создается только один инстанс сервлетов](https://stackoverflow.com/questions/6298309). Те. `InMemoryMealRepositoryImpl` в нашем случае создается тоже только один раз. Далее все наши классы слоев приложения будут создаваться через Spring, бины которого по умолчанию являются синглетонами (в его контексте).  
+Начиная с Servlet API 2.3 пул сервлетов не создается, [создается только один инстанс сервлетов](https://stackoverflow.com/questions/6298309). Те. `InMemoryMealRepositoryImpl` в нашем случае создается тоже только один раз. Далее все наши классы слоев приложения будут создаваться через Spring, бины которого по умолчанию являются синглтонами (в его контексте).  
 
 > `MealServlet.getId(request)` может кинуть NPE (`NullPointerException`). Почему мы его не обрабатываем?
 
-`Objects.requireNonNull` - это проверка предсловия (будет на 4-м занятии). Означает что в метод пришел неверный аргумент (должен быть не null) и приложение сообщает об ошибке (что лучше, чем ее проглатывать или замазывать, иначе приложение может работать неправильно). Красиво обрабатывать ошибки будем на последних занятиях (Spring Exception Handling).
+`Objects.requireNonNull` - это проверка предусловия (будет на 4-м занятии). Означает что в метод пришел неверный аргумент (должен быть не null) и приложение сообщает об ошибке (что лучше, чем ее проглатывать или замазывать, иначе приложение может работать неправильно). Красиво обрабатывать ошибки будем на последних занятиях (Spring Exception Handling).
 
 ## Занятие 2:
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 3. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFVDJZVTktQzRYTWc">Библиотека vs Фреймворк. Стандартные библиотеки Apache Commons, Guava</a>
