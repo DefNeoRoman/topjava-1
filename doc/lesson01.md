@@ -131,8 +131,8 @@
 
 > Почему `private static final Logger log` а не `LOG` ?
 
-- 1. Так ее называют по умолчанию в проекте lombook. 
-- 2. Это [правило именования констант, которые не "deeply immutable"](https://google.github.io/styleguide/javaguide.html#s5.2.4-constant-names), те если их содержимое можно изменить.
+- Так ее называют по умолчанию в проекте lombook. 
+- Это [правило именования констант, которые не "deeply immutable"](https://google.github.io/styleguide/javaguide.html#s5.2.4-constant-names), те если их содержимое можно изменить.
 
 >  Используются ли еще где-то в реальной разработке JSP, или это уже устаревшая технология? Заменит ли ее JSF (https://javatalks.ru/topics/38037)?
 
