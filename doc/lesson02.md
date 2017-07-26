@@ -137,7 +137,7 @@
 #### Дополнительно видео по Spring
    - [Юрий Ткач: Spring Framework - The Basics](https://www.youtube.com/playlist?list=PL6jg6AGdCNaWF-sUH2QDudBRXo54zuN1t)
    - [Java Brains: Spring Framework](https://www.youtube.com/playlist?list=PLC97BDEFDCDD169D7)
-   - [Roman Brovko: Spring](https://www.youtube.com/playlist?list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi)
+   - [Тимур Батыршинов: Spring](https://www.youtube.com/playlist?list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi)
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 6. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFN2N6LS1PVE96SW8">Пояснения к HW2. Обработка Autowired</a>
   
