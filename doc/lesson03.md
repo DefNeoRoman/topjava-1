@@ -4,7 +4,7 @@
 
 ### ![correction](https://cloud.githubusercontent.com/assets/13649199/13672935/ef09ec1e-e6e7-11e5-9f79-d1641c05cbe6.png) Правки в проекте
 
-#### Apply 3_0_1_log_correction.patch
+#### Apply 3_0_1_correction.patch
 - Пофиксил багу c `history.back()` в `meal.jsp` для **FireFox** (коммит формы по `cancel`).
 - Добавил еще один способы вывести `dateTime` через стандартную JSTL функцию `replace`  (префикс `fn` в шапке также надо поменять)
 - Переименовал `meal.jsp` в `mealForm.jsp`
