@@ -3,17 +3,20 @@ package ru.javawebinar.topjava.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Meal extends BaseEntity {
+    private static final AtomicInteger ai = new AtomicInteger(1000);
     private LocalDateTime dateTime;
 
     private  String description;
-
+    private Integer userId;
     private int calories;
 
     public Meal() {
 
     }
+
 
     public Meal(LocalDateTime dateTime, String description, int calories) {
         this(null, dateTime, description, calories);
@@ -24,6 +27,7 @@ public class Meal extends BaseEntity {
         this.dateTime = dateTime;
         this.description = description;
         this.calories = calories;
+        this.userId = userId;
     }
 
     public LocalDateTime getDateTime() {
