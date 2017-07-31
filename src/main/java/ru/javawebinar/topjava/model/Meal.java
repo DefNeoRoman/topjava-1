@@ -50,6 +50,14 @@ public class Meal extends BaseEntity {
         return dateTime.toLocalTime();
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+
     @Override
     public String toString() {
         return "Meal{" +
