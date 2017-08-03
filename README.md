@@ -77,7 +77,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Spring Internationalization
 - Домашнее задание (HW6 + Optional)
 
-#### 24.08: 7-е занятие
+#### 31.08: 7-е занятие
 - Разбор домашнего задания HW6 + Optional
 - Автогенерация DDL по модели
 - Тестирование Spring MVC
@@ -87,7 +87,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Тестирование через SoapUi. UTF-8
 - Домашнее задание (HW7 + Optional)
 
-#### 31.08: 8-е занятие
+#### 07.09: 8-е занятие
 - Разбор домашнего задания HW7 + Optional
 - WebJars. jQuery и JavaScript frameworks
 - Bootstrap
@@ -96,7 +96,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Добавление Spring Security
 - Домашнее задание (HW8 + Optional)
 
-#### 07.09: 9-е занятие
+#### 014.09: 9-е занятие
 - Разбор домашнего задания HW8 + Optional
 - Spring Binding
 - Spring Validation
@@ -108,7 +108,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Cookie. Session
 - Домашнее задание (HW9 + Optional)
 
-#### 14.09: 10-е занятие
+#### 21.09: 10-е занятие
 - Разбор домашнего задания HW10 + Optional
 - Spring Security Taglib. Method Security Expressions
 - Интерсепторы. Редактирование профиля. JSP tag files
@@ -118,7 +118,7 @@ Maven/ Spring/ Security/ JPA(Hibernate)/ REST(Jackson)/ Bootstrap(CSS)/ jQuery +
 - Защита от межсайтовой подделки запросов (CSRF)
 - Домашнее задание (HW10)
 
-#### 21.09: Заключительное 11-е занятие
+#### 28.09: Заключительное 11-е занятие
 - Разбор домашнего задания HW10 + Optional
 - Локализация datatables, ошибок валидации
 - Защита от XSS (Cross Site Scripting)
