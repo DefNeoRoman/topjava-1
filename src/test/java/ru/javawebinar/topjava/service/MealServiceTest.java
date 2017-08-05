@@ -17,6 +17,7 @@ import java.util.Arrays;
 
 import static ru.javawebinar.topjava.MealTestData.*;
 import static ru.javawebinar.topjava.UserTestData.ADMIN_ID;
+import static ru.javawebinar.topjava.UserTestData.USER;
 import static ru.javawebinar.topjava.UserTestData.USER_ID;
 
 @ContextConfiguration({
@@ -48,6 +49,7 @@ public class MealServiceTest {
     @Test
     public void testSave() throws Exception {
         Meal created = getCreated();
+        created.setUser(USER);
         service.create(created, USER_ID);
         MATCHER.assertCollectionEquals(Arrays.asList(created, MEAL6, MEAL5, MEAL4, MEAL3, MEAL2, MEAL1), service.getAll(USER_ID));
     }
@@ -66,6 +68,7 @@ public class MealServiceTest {
     @Test
     public void testUpdate() throws Exception {
         Meal updated = getUpdated();
+        updated.setUser(USER);
         service.update(updated, USER_ID);
         MATCHER.assertEquals(updated, service.get(MEAL1_ID, USER_ID));
     }

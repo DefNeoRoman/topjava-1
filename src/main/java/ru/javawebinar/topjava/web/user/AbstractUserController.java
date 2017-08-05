@@ -17,7 +17,9 @@ public abstract class AbstractUserController {
 
 
     private UserService service;
-
+    public AbstractUserController(UserService service) {
+        this.service = service;
+    }
     public List<User> getAll() {
         log.info("getAll");
         return service.getAll();

@@ -22,10 +22,10 @@ import static ru.javawebinar.topjava.UserTestData.USER;
 @RunWith(SpringRunner.class)
 public class InMemoryAdminRestControllerSpringTest {
 
-
+    @Autowired
     private AdminRestController controller;
 
-
+    @Autowired
     private UserRepository repository;
 
     @Before
@@ -48,3 +48,4 @@ public class InMemoryAdminRestControllerSpringTest {
         controller.delete(10);
     }
 }
+
