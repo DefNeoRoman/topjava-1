@@ -1,7 +1,12 @@
 package ru.javawebinar.topjava.service;
 
+import org.junit.AfterClass;
+import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -9,6 +14,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ru.javawebinar.topjava.model.Meal;
+import ru.javawebinar.topjava.rules.TimeLogger;
 import ru.javawebinar.topjava.util.exception.NotFoundException;
 
 import java.time.LocalDate;
@@ -27,14 +33,22 @@ import static ru.javawebinar.topjava.UserTestData.USER_ID;
 @RunWith(SpringJUnit4ClassRunner.class)
 @Sql(scripts = "classpath:db/populateDB.sql", config = @SqlConfig(encoding = "UTF-8"))
 public class MealServiceTest {
-
+    private static final Logger log = LoggerFactory.getLogger(MealServiceTest.class);
+    @Rule
+    public final TimeLogger rule = new TimeLogger();
     static {
         SLF4JBridgeHandler.install();
     }
 
     @Autowired
     private MealService service;
+    @AfterClass
+    public static void after() {
 
+        long resTime = TimeLogger.getResultTime();
+        log.info("TestClass end in "+resTime + " seconds");
+        System.out.println("after");
+    }
     @Test
     public void testDelete() throws Exception {
         service.delete(MEAL1_ID, USER_ID);
