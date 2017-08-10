@@ -1,5 +1,4 @@
 package ru.javawebinar.topjava.web;
-
 import org.slf4j.Logger;
 import ru.javawebinar.topjava.AuthorizedUser;
 

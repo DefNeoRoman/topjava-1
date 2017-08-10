@@ -1,5 +1,6 @@
 package ru.javawebinar.topjava.web;
 
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,10 +23,10 @@ import static ru.javawebinar.topjava.UserTestData.USER;
 @RunWith(SpringRunner.class)
 public class InMemoryAdminRestControllerSpringTest {
 
-
+    @Autowired
     private AdminRestController controller;
 
-
+    @Autowired
     private UserRepository repository;
 
     @Before
