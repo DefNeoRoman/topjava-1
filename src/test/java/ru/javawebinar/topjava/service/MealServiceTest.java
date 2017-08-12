@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 import static org.slf4j.LoggerFactory.getLogger;
 import static ru.javawebinar.topjava.MealTestData.*;
 import static ru.javawebinar.topjava.UserTestData.ADMIN_ID;
+import static ru.javawebinar.topjava.UserTestData.USER;
 import static ru.javawebinar.topjava.UserTestData.USER_ID;
 
 @ContextConfiguration({
@@ -87,7 +88,8 @@ public class MealServiceTest {
     @Test
     public void testCreate() throws Exception {
         Meal created = getCreated();
-        service.create(created, USER_ID);
+        created.setUser(USER);
+        service.save(created, USER_ID);
         MATCHER.assertCollectionEquals(Arrays.asList(created, MEAL6, MEAL5, MEAL4, MEAL3, MEAL2, MEAL1), service.getAll(USER_ID));
     }
 

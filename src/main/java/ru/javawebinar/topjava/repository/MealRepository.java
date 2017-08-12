@@ -1,10 +1,13 @@
 package ru.javawebinar.topjava.repository;
-
 import ru.javawebinar.topjava.model.Meal;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * GKislin
+ * 06.03.2015.
+ */
 public interface MealRepository {
     // null if updated meal do not belong to userId
     Meal save(Meal meal, int userId);
@@ -20,4 +23,11 @@ public interface MealRepository {
 
     // ORDERED dateTime
     List<Meal> getBetween(LocalDateTime startDate, LocalDateTime endDate, int userId);
+
+    // null if meal do not belong to userId
+    // null if not found
+    // load user only in data-jpa
+    default Meal getWithUser(int id, int userId) {
+        return get(id, userId);
+    }
 }

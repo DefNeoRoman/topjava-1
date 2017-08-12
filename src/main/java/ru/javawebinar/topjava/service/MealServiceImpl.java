@@ -5,15 +5,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.repository.MealRepository;
+import ru.javawebinar.topjava.util.exception.NotFoundException;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import static ru.javawebinar.topjava.util.ValidationUtil.checkNotFoundWithId;
 
-
 @Service
 public class MealServiceImpl implements MealService {
+
 
     private final MealRepository repository;
 
@@ -23,12 +24,12 @@ public class MealServiceImpl implements MealService {
     }
 
     @Override
-    public Meal get(int id, int userId) {
+    public Meal get(int id, int userId) throws NotFoundException {
         return checkNotFoundWithId(repository.get(id, userId), id);
     }
 
     @Override
-    public void delete(int id, int userId) {
+    public void delete(int id, int userId) throws NotFoundException {
         checkNotFoundWithId(repository.delete(id, userId), id);
     }
 
@@ -45,13 +46,19 @@ public class MealServiceImpl implements MealService {
     }
 
     @Override
-    public Meal update(Meal meal, int userId) {
+    public Meal update(Meal meal, int userId) throws NotFoundException {
+        Assert.notNull(meal, "meal must not be null");
         return checkNotFoundWithId(repository.save(meal, userId), meal.getId());
     }
 
     @Override
-    public Meal create(Meal meal, int userId) {
+    public Meal save(Meal meal, int userId) {
         Assert.notNull(meal, "meal must not be null");
         return repository.save(meal, userId);
+    }
+
+    @Override
+    public Meal getWithUser(int id, int userId) throws NotFoundException {
+        return checkNotFoundWithId(repository.getWithUser(id, userId), id);
     }
 }
