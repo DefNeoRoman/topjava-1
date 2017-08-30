@@ -8,13 +8,14 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.Arrays;
 
+
 import static ru.javawebinar.topjava.MealTestData.*;
 import static ru.javawebinar.topjava.UserTestData.ADMIN_ID;
 import static ru.javawebinar.topjava.UserTestData.USER_ID;
-public abstract class AbstractMealServiceTest {
+public abstract class AbstractMealServiceTest extends AbstractServiceTest {
 
     @Autowired
-    MealService service;
+    public MealService service;
 
     @Test
     public void testDelete() throws Exception {
@@ -74,4 +75,4 @@ public abstract class AbstractMealServiceTest {
                         LocalDate.of(2015, Month.MAY, 30), USER_ID));
     }
 }
-}
+
