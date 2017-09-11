@@ -20,7 +20,7 @@ import static ru.javawebinar.topjava.util.ValidationUtil.checkNew;
 @Controller
 public class MealRestController {
     private static final Logger log = LoggerFactory.getLogger(MealRestController.class);
-
+    static final String REST_URL = "/rest/profile/meals";
     private final MealService service;
 
     @Autowired
