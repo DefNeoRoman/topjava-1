@@ -1,6 +1,8 @@
-package ru.javawebinar.topjava.util;
+package ru.javawebinar.topjava.util.sandbox;
 
 import org.apache.commons.lang3.StringEscapeUtils;
+
+import java.io.IOException;
 
 public class SandBox {
     public static void main(String[] args) {
@@ -10,4 +12,9 @@ public class SandBox {
         //Написать скрипт, который преобразовывает один файл в другой
         System.out.println(unEscape);
     }
+    public void method() throws Exception {
+        //...
+    }
+
+
 }

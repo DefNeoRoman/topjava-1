@@ -26,7 +26,7 @@ public class MealRestControllerTest extends AbstractControllerTest {
     private static final String REST_URL = MealRestController.REST_URL + '/';
 
     @Autowired
-    
+
     private MealService service;
 
     @Test
