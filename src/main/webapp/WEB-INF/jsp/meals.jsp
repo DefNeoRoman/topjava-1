@@ -17,7 +17,7 @@
         <div class="container">
             <div class="shadow">
                 <div class="view-box">
-                    <form method="post" action="meals/filter">
+                    <form id="mealFilter" method="post" action="/ajax/profile/meals/filter">
                         <dl>
                             <dt><spring:message code="meal.startDate"/>:</dt>
                             <dd><input type="date" name="startDate" value="${param.startDate}"></dd>
@@ -128,33 +128,32 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h2 class="modal-title">Редактирование пользователя</h2>
+                <h2 class="modal-title">Meal Edit</h2>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" id="mealDetailsEditForm">
-                    <input type="hidden" id="userId" name="id">
+                    <input type="hidden" id="mealId" name="id">
 
                     <div class="form-group">
-                        <label for="editName" class="control-label col-xs-3"><spring:message code="user.name"/></label>
+                        <label for="editDescription" class="control-label col-xs-3"><spring:message code="meal.description"/></label>
 
                         <div class="col-xs-9">
-                            <input type="text" class="form-control" id="editName" name="name" placeholder="<spring:message code="user.name"/>">
+                            <input type="text" class="form-control" id="editDescription" name="description" placeholder="<spring:message code="meal.description"/>">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="editEmail" class="control-label col-xs-3"><spring:message code="user.email"/></label>
+                        <label for="editCalories" class="control-label col-xs-3"><spring:message code="meal.calories"/></label>
 
                         <div class="col-xs-9">
-                            <input type="email" class="form-control" id="editEmail" name="email" placeholder="<spring:message code="user.email"/>">
+                            <input type="text" class="form-control" id="editCalories" name="calories" placeholder="<spring:message code="meal.calories"/>">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="editPassword" class="control-label col-xs-3"><spring:message code="user.password"/></label>
-
+                        <label for="editDateTime" class="control-label col-xs-3"><spring:message code="meal.dateTime"/></label>
                         <div class="col-xs-9">
-                            <input type="password" class="form-control" id="editPassword" name="password" placeholder="<spring:message code="user.password"/>">
+                            <input type="datetime-local" class="form-control" id="editDateTime" name="dateTime" placeholder="<spring:message code="meal.dateTime"/>">
                         </div>
                     </div>
 

@@ -9,10 +9,7 @@ function makeEditable() {
           $("#editName").val(data.name);
           $("#editEmail").val(data.email);
           $("#editPassword").val(data.password);
-
-
         });
-
         $("#editUser").modal();
     });
     $("#detailsForm").submit(function () {

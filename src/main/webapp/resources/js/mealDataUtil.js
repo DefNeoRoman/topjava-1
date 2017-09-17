@@ -3,8 +3,24 @@ function makeEditableMeal() {
         save();
         return false;
     });
+    $("#mealDetailsEditForm").submit(function () {
+        edit();
+        return false;
+    });
+
     $(".delete").click(function () {
         deleteRow($(this).attr("id"));
+    });
+    $(".update").click(function () {
+        var id = $(this).attr("id");
+        $.get(ajaxUrlMeal + id, function(data, status){
+            $("#mealId").val(data.id);
+            $("#editDescription").val(data.description);
+            $("#editCalories").val(data.calories);
+            $("#editDateTime").val(data.dateTime);
+        });
+        $("#editMeal").modal();
+
     });
     $(document).ajaxError(function (event, jqXHR, options, jsExc) {
         failNoty(event, jqXHR, options, jsExc);
@@ -30,6 +46,49 @@ function save() {
         }
     });
 }
+function edit() {
+    var form = $("#mealDetailsEditForm");
+    $.ajax({
+        type: "POST",
+        url: ajaxUrlMeal,
+        data: form.serialize(),
+        success: function () {
+            $("#editMeal").modal("hide");
+            updateTable();
+            successNoty("Updated");
+        }
+    });
+}
+$("#mealFilter").submit(function () {
+    filterMeal();
+    return false;
+});
+function filterMeal() {
+    var form = $("#mealFilter");
+    $.ajax({
+        url: $(form).attr('action'),
+        type: $(form).attr('method'),
+        data: $(form).serialize(),
+        success: function (data) {
+            ajaxUrl = ajaxUrlMeal + '?' + $(form).serialize();// в параметр запроса можно передавать Json
+            mealDataApi.clear();
+            $.each(data, function (key, item) {
+                mealDataApi.row.add(item);
+            });
+            mealDataApi.draw();
+            successNoty('Filtered');
+        }
+    });
+    return false;
+}
+
+function clearFilter() {
+    $("#mealFilter").find(":input").val(null);
+    ajaxUrl = ajaxUrlMeal;
+    updateTable();
+    successNoty('Filter cleared');
+}
+//mealFilter
 function updateTable() {
     $.get(ajaxUrlMeal, function (data) {
         mealDataApi.clear().rows.add(data).draw();
