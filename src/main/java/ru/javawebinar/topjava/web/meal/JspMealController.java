@@ -18,7 +18,7 @@ import static ru.javawebinar.topjava.util.DateTimeUtil.parseLocalDate;
 import static ru.javawebinar.topjava.util.DateTimeUtil.parseLocalTime;
 
 @Controller
-@RequestMapping(value = "/meals")
+//@RequestMapping(value = "/meals")
 public class JspMealController extends AbstractMealController {
 
     @GetMapping("/delete")
@@ -39,19 +39,19 @@ public class JspMealController extends AbstractMealController {
         return "mealForm";
     }
 
-    @PostMapping
-    public String updateOrCreate(HttpServletRequest request) {
-        Meal meal = new Meal(LocalDateTime.parse(request.getParameter("dateTime")),
-                request.getParameter("description"),
-                Integer.valueOf(request.getParameter("calories")));
-
-        if (request.getParameter("id").isEmpty()) {
-            super.create(meal);
-        } else {
-            super.update(meal, getId(request));
-        }
-        return "redirect:/meals";
-    }
+//    @PostMapping
+//    public String updateOrCreate(HttpServletRequest request) {
+//        Meal meal = new Meal(LocalDateTime.parse(request.getParameter("dateTime")),
+//                request.getParameter("description"),
+//                Integer.valueOf(request.getParameter("calories")));
+//
+//        if (request.getParameter("id").isEmpty()) {
+//            super.create(meal);
+//        } else {
+//            super.update(meal, getId(request));
+//        }
+//        return "redirect:/meals";
+//    }
 
     @PostMapping("/filter")
     public String getBetween(HttpServletRequest request, Model model) {

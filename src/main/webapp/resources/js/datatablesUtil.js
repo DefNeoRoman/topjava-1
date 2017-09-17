@@ -2,12 +2,27 @@ function makeEditable() {
     $(".delete").click(function () {
         deleteRow($(this).attr("id"));
     });
+    $(".update").click(function () {
+        var id = $(this).attr("id");
+        $.get(ajaxUrl + id, function(data, status){
+            $("#userId").val(data.id);
+          $("#editName").val(data.name);
+          $("#editEmail").val(data.email);
+          $("#editPassword").val(data.password);
 
+
+        });
+
+        $("#editUser").modal();
+    });
     $("#detailsForm").submit(function () {
         save();
         return false;
     });
-
+    $("#detailsEditForm").submit(function () {
+        updateUser();
+        return false;
+    });
     $(document).ajaxError(function (event, jqXHR, options, jsExc) {
         failNoty(event, jqXHR, options, jsExc);
     });
@@ -48,6 +63,19 @@ function save() {
             $("#editRow").modal("hide");
             updateTable();
             successNoty("Saved");
+        }
+    });
+}
+function updateUser() {
+    var form = $("#detailsEditForm");
+    $.ajax({
+        type: "POST",
+        url: ajaxUrl,
+        data: form.serialize(),
+        success: function () {
+            $("#editUser").modal("hide");
+            updateTable();
+            successNoty("Updated");
         }
     });
 }
