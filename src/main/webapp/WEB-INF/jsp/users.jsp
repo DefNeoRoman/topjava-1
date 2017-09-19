@@ -38,6 +38,11 @@
                             <td>${user.roles}</td>
                             <td><input type="checkbox"
                                    <c:if test="${user.enabled}">checked</c:if> onclick="enable($(this), ${user.id})"/></td>
+                            <%--галочка стоит -> подписано checked--%>
+                            <%--нет галочки -> ничего не подписано--%>
+                            <%--внутри тега можно писать jsp выражения, таким образов дописывая аттрибуты тега--%>
+                            <%--конструкция $(this) обращается непосредственно к значению тега то есть к true/false--%>
+                            <%--которое передаем в функцию.--%>
                             <td><fmt:formatDate value="${user.registered}" pattern="dd-MMMM-yyyy"/></td>
                             <td><a><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
                             <td><a onclick="deleteRow(${user.id})"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
