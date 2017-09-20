@@ -39,7 +39,7 @@
                             <td id="userName"><c:out value="${user.name}"/></td>
                             <td id ="userEmail"><a href="mailto:${user.email}">${user.email}</a></td>
                             <td>${user.roles}</td>
-                            <td><input type="checkbox" <c:if test="${user.enabled}">checked</c:if> id="${user.id}"/></td>
+                            <td><input type="checkbox" <c:if test="${user.enabled}">checked</c:if> onclick="enable($(this),${user.id})" id="${user.id}"/></td>
                             <td><fmt:formatDate value="${user.registered}" pattern="dd-MMMM-yyyy"/></td>
                             <td><a class="update" id="${user.id}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
                             <td><a class="delete" id="${user.id}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>

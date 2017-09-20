@@ -42,6 +42,10 @@ public abstract class AbstractUserController {
         assureIdConsistent(user, id);
         service.update(user);
     }
+    public void enable(int id, boolean enable){
+        log.info("enable {} with id={}",id);
+        service.enable(id,enable);
+    }
 
     public User getByMail(String email) {
         log.info("getByEmail {}", email);

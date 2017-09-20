@@ -16,6 +16,7 @@ import static ru.javawebinar.topjava.util.ValidationUtil.checkNotFound;
 import static ru.javawebinar.topjava.util.ValidationUtil.checkNotFoundWithId;
 
 @Service
+
 public class UserServiceImpl implements UserService {
 
     private final UserRepository repository;
@@ -71,5 +72,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getWithMeals(int id) {
         return checkNotFoundWithId(repository.getWithMeals(id), id);
+    }
+
+    @Override
+    public void enable(int id, boolean enable) {
+        User u = repository.get(id);
+        u.setEnabled(enable);
+        repository.save(u);
     }
 }
