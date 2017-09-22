@@ -76,20 +76,10 @@ function updateUser() {
         }
     });
 }
-function enable(checkbox, userId) {
-    var enabled = checkbox.is(':checked')
-    $.ajax({
-        type: "POST",
-        url: ajaxUrl + userId+"/"+enabled,
-        data: "enabled="+enabled, // передается как параметр запроса
-        //но знак вопроса при передаче параметров почему-то не ставится
-        success: function () {
 
-            successNoty("Test");
-        }
-    });
 
-}
+
+
 var failedNote;
 
 function closeNoty() {
