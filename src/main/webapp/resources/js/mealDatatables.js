@@ -16,10 +16,26 @@ function clearFilter() {
 }
 
 $(function () {
+
     datatableApi = $("#datatable").DataTable({
+        "ajax": {
+            "url": ajaxUrl,
+            "dataSrc": ""
+        },
         "paging": false,
         "info": true,
-        "columns": [
+        "createdRow": function( row, data, dataIndex ) {
+            //row - это уже обернутые JSON данные в формате HTML
+            //data - есть те самые JSON данные
+            //dataIndex - номер рядка
+            console.log(row+" "+ data + " " + dataIndex)
+            if(data.exceed == true){
+                $(row).addClass("exceeded");
+            }else{
+                $(row).addClass("normal");
+            }
+            },
+           "columns": [
             {
                 "data": "dateTime"
             },
@@ -28,14 +44,17 @@ $(function () {
             },
             {
                 "data": "calories"
+
             },
             {
-                "defaultContent": "Edit",
-                "orderable": false
+                "orderable": false,
+                "defaultContent": "",
+                "render": renderEditBtn
             },
             {
-                "defaultContent": "Delete",
-                "orderable": false
+                "orderable": false,
+                "defaultContent": "",
+                "render": renderDeleteBtn
             }
         ],
         "order": [
@@ -43,7 +62,8 @@ $(function () {
                 0,
                 "desc"
             ]
-        ]
+        ],
+        "initComplete": makeEditable
     });
-    makeEditable();
+
 });

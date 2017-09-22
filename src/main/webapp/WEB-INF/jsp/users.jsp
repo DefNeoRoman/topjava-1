@@ -6,6 +6,7 @@
 <html>
 <jsp:include page="fragments/headTag.jsp"/>
 <body>
+
 <script type="text/javascript" src="resources/js/datatablesUtil.js" defer></script>
 <script type="text/javascript" src="resources/js/userDatatables.js" defer></script>
 <jsp:include page="fragments/bodyHeader.jsp"/>
@@ -30,24 +31,24 @@
                         <th></th>
                     </tr>
                     </thead>
-                    <c:forEach items="${users}" var="user">
-                        <jsp:useBean id="user" scope="page" type="ru.javawebinar.topjava.model.User"/>
-                        <tr class="${user.enabled ? '' : 'disabled'}">
-                            <td><c:out value="${user.name}"/></td>
-                            <td><a href="mailto:${user.email}">${user.email}</a></td>
-                            <td>${user.roles}</td>
-                            <td><input type="checkbox"
-                                   <c:if test="${user.enabled}">checked</c:if> onclick="enable($(this), ${user.id})"/></td>
-                            <%--галочка стоит -> подписано checked--%>
-                            <%--нет галочки -> ничего не подписано--%>
-                            <%--внутри тега можно писать jsp выражения, таким образов дописывая аттрибуты тега--%>
-                            <%--конструкция $(this) обращается непосредственно к значению тега то есть к true/false--%>
-                            <%--которое передаем в функцию.--%>
-                            <td><fmt:formatDate value="${user.registered}" pattern="dd-MMMM-yyyy"/></td>
-                            <td><a onclick=updateRow(${user.id})><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
-                            <td><a onclick="deleteRow(${user.id})"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
-                        </tr>
-                    </c:forEach>
+                    <%--<c:forEach items="${users}" var="user">--%>
+                        <%--<jsp:useBean id="user" scope="page" type="ru.javawebinar.topjava.model.User"/>--%>
+                        <%--<tr class="${user.enabled ? '' : 'disabled'}">--%>
+                            <%--<td><c:out value="${user.name}"/></td>--%>
+                            <%--<td><a href="mailto:${user.email}">${user.email}</a></td>--%>
+                            <%--<td>${user.roles}</td>--%>
+                            <%--<td><input type="checkbox"--%>
+                                   <%--<c:if test="${user.enabled}">checked</c:if> onclick="enable($(this), ${user.id})"/></td>--%>
+                            <%--&lt;%&ndash;галочка стоит -> подписано checked&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;нет галочки -> ничего не подписано&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;внутри тега можно писать jsp выражения, таким образов дописывая аттрибуты тега&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;конструкция $(this) обращается непосредственно к значению тега то есть к true/false&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;которое передаем в функцию.&ndash;%&gt;--%>
+                            <%--<td><fmt:formatDate value="${user.registered}" pattern="dd-MMMM-yyyy"/></td>--%>
+                            <%--<td><a onclick=updateRow(${user.id})><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>--%>
+                            <%--<td><a onclick="deleteRow(${user.id})"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>--%>
+                        <%--</tr>--%>
+                    <%--</c:forEach>--%>
                 </table>
             </div>
         </div>
