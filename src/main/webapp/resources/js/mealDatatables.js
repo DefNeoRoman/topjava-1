@@ -16,6 +16,27 @@ function clearFilter() {
 }
 
 $(function () {
+    $('#dateTime').datetimepicker();
+    $('#startDate').datetimepicker({
+        timepicker: false,
+        format: 'Y-m-d',
+        formatDate: 'Y-m-d',
+
+    });
+    $('#endDate').datetimepicker({
+        timepicker: false,
+        format: 'Y-m-d',
+        formatDate: 'Y-m-d',
+
+    });
+    $('#startTime').datetimepicker({
+        datepicker:false,
+        format: 'H:i'
+    });
+    $('#endTime').datetimepicker({
+        datepicker:false,
+        format: 'H:i'
+    });
 
     datatableApi = $("#datatable").DataTable({
         "ajax": {
@@ -28,7 +49,7 @@ $(function () {
             //row - это уже обернутые JSON данные в формате HTML
             //data - есть те самые JSON данные
             //dataIndex - номер рядка
-            console.log(row+" "+ data + " " + dataIndex)
+
             if(data.exceed == true){
                 $(row).addClass("exceeded");
             }else{
@@ -37,7 +58,17 @@ $(function () {
             },
            "columns": [
             {
-                "data": "dateTime"
+                "data": "dateTime",
+                "render": function (data, type, row) {
+                    //здесь data уже распарсена в то что надо
+                    var dateTime = data;
+                    if (type === "display") {
+                        return dateTime.replace("T"," ");
+                    }
+                    return dateTime;
+                    //без return выскакивает какое-то предупреждение
+
+                }
             },
             {
                 "data": "description"

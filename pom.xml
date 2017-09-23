@@ -211,11 +211,43 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${hibernate-validator.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>classmate</artifactId>
+                    <groupId>com.fasterxml</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>classmate</artifactId>
+                    <groupId>com.fasterxml</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>classmate</artifactId>
+                    <groupId>com.fasterxml</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-ehcache</artifactId>
             <version>${hibernate.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>ehcache</artifactId>
+                    <groupId>net.sf.ehcache</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>ehcache</artifactId>
+                    <groupId>net.sf.ehcache</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>ehcache</artifactId>
+                    <groupId>net.sf.ehcache</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>ehcache</artifactId>
+                    <groupId>net.sf.ehcache</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!--http://hibernate.org/validator/documentation/getting-started/#unified-expression-language-el-->
@@ -230,6 +262,16 @@
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache</artifactId>
             <version>${ehcache.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!--Web-->
@@ -301,7 +343,6 @@
             <artifactId>noty</artifactId>
             <version>${webjars-noty.version}</version>
         </dependency>
-
         <!--JSON-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

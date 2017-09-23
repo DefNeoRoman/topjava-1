@@ -17,3 +17,4 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="resources/js/libs/jquery.datetimepicker.full.min.js" defer></script>

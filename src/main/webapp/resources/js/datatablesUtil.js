@@ -11,7 +11,7 @@ function makeEditable() {
 }
 
 function add() {
-    debugger;
+
     $("#modalTitle").html(i18n["addTitle"]);
     form.find(":input").val("");
     $("#editRow").modal();
