@@ -16,17 +16,20 @@ function clearFilter() {
 }
 
 $(function () {
-    $('#dateTime').datetimepicker();
+    $('#dateTime').datetimepicker({
+        format: 'Y-m-d\\TH:i',
+        formatDate: 'Y-m-d H:i'
+    });
     $('#startDate').datetimepicker({
         timepicker: false,
         format: 'Y-m-d',
-        formatDate: 'Y-m-d',
+        formatDate: 'Y-m-d'
 
     });
     $('#endDate').datetimepicker({
         timepicker: false,
         format: 'Y-m-d',
-        formatDate: 'Y-m-d',
+        formatDate: 'Y-m-d'
 
     });
     $('#startTime').datetimepicker({
