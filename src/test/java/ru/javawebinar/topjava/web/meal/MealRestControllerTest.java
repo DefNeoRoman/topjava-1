@@ -19,6 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static ru.javawebinar.topjava.MealTestData.*;
 import static ru.javawebinar.topjava.MealTestData.MATCHER;
+import static ru.javawebinar.topjava.TestUtil.contentMatcher;
 import static ru.javawebinar.topjava.TestUtil.userHttpBasic;
 import static ru.javawebinar.topjava.UserTestData.*;
 import static ru.javawebinar.topjava.model.AbstractBaseEntity.START_SEQ;
@@ -105,7 +106,7 @@ public class MealRestControllerTest extends AbstractControllerTest {
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(content().json(JsonUtil.writeValue(MealsUtil.getWithExceeded(MEALS, USER.getCaloriesPerDay()))));
+                .andExpect(contentMatcher(MealsUtil.getWithExceeded(MEALS, USER.getCaloriesPerDay())));
     }
 
     @Test
@@ -116,9 +117,9 @@ public class MealRestControllerTest extends AbstractControllerTest {
                 .with(userHttpBasic(USER)))
                 .andExpect(status().isOk())
                 .andDo(print())
-                .andExpect(content().json(JsonUtil.writeArray(
+                .andExpect(contentMatcher(
                         MealsUtil.createWithExceed(MEAL4, true),
-                        MealsUtil.createWithExceed(MEAL1, false))));
+                        MealsUtil.createWithExceed(MEAL1, false)));
     }
 
     @Test
@@ -127,7 +128,7 @@ public class MealRestControllerTest extends AbstractControllerTest {
                 .with(userHttpBasic(USER)))
                 .andExpect(status().isOk())
                 .andDo(print())
-                .andExpect(content().json(JsonUtil.writeValue(
-                        MealsUtil.getWithExceeded(Arrays.asList(MEAL6, MEAL5, MEAL4, MEAL3, MEAL2, MEAL1), USER.getCaloriesPerDay()))));
+                .andExpect(contentMatcher(
+                        MealsUtil.getWithExceeded(Arrays.asList(MEAL6, MEAL5, MEAL4, MEAL3, MEAL2, MEAL1), USER.getCaloriesPerDay())));
     }
 }
